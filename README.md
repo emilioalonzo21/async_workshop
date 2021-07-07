@@ -1,6 +1,37 @@
 # JavaScript Async Workshop
 
-Create a command line application that takes a pokemon type and writes the names and moves matching that type to a file called `output.txt`, and writes "No matching type" if the api does not find a matching type.
+## Project Instructions
+
+* Create a command line application that processes a string representing a Pokemon type (i.e. "electric") and writes each Pokemon's `names` and `moves` on a new line to a file named `output.txt` according to the pokeapi.co API. (If you don't know what a command line application, feel free to look online or check out [this](https://developer.okta.com/blog/2019/06/18/command-line-app-with-nodejs) article)
+* Some pokemon found on the pokeapi will occasionally not contain any moves. If your application encounters a pokemon with no moves the text written to the `output.txt` file should reflect the lack of moves found.
+
+Example console input:
+```js
+node app.js "fire"
+```
+
+Example file output (`output.txt`):
+```txt
+fletchinder
+razor-wind, swords-dance, fly, tackle, growl, ember, flamethrower, peck, toxic, agility, quick-attack, double-team, fire-blast, rest, substitute, thief, snore, flail, protect, swagger, steel-wing, attract, sleep-talk, return, frustration, hidden-power, sunny-day, heat-wave, will-o-wisp, facade, taunt, snatch, secret-power, overheat, aerial-ace, roost, natural-gift, tailwind, u-turn, me-first, flame-charge, round, incinerate, acrobatics, work-up, confide
+torracat
+scratch, swords-dance, double-kick, thrash, leer, bite, growl, roar, ember, flamethrower, toxic, double-team, lick, fire-blast, leech-life, fury-swipes, rest, substitute, protect, scary-face, outrage, swagger, attract, sleep-talk, return, frustration, hidden-power, sunny-day, torment, will-o-wisp, facade, taunt, overheat, bulk-up, u-turn, flare-blitz, shadow-claw, fire-fang, flame-charge, round, acrobatics, fire-pledge, work-up, confide
+centiskorch-gmax
+There were no moves found for this pokemon
+...
+```
+
+* If an incorrect or mispelled type name is used (i.e. "muscle" or "firre") the text written to the `output.txt` file should reflect those errors.
+
+Example console input:
+```js
+node app.js "firre"
+```
+
+Example file out (`output.txt`)
+```txt
+No matching type found for firre.
+```
 
 - Must use writeFile (async version)
 - Must use promise.all
