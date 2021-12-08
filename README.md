@@ -42,3 +42,16 @@ No matching type found for firre.
 To set up this application, you will need to run the command `npm install` to install the `node-fetch` package. This package allows you to use the Fetch API from node processes without requiring a browser.
 
 To run this application you will then need to enter the command `node app.js ${[String of pokemon type]}` in your terminal (i.e. `node app.js "electric"`). The `app.js` file `console.log()`'s `process.argv[2]`. `process.argv` is an array that contains the arguments passed in to a node command, the 2 index in that array is the first argument you pass to the node command.
+
+
+## Stretch Goals
+* Handle Pokemon name inputs. For example, if you were to input the command below, your application should create a new `pikachu.txt` file that contains the Pokemon's name, abilities, moves, evolutions, stats, and types in a readable format.
+```javascript
+node app.js "pikachu"
+```
+* Gracefully handle any errors that come from the API during any `Fetch` calls
+* When a type is passed to the application, also include the encounter locations for each pokemon on a new line after the moves. This information can be further broken down to show encounter locations specific to each version of Pokemon game.
+```javascript
+Version(s) - Gold, Silver
+viridian-forest-area, kanto-route-2-south-towards-viridian-city, ...
+```
